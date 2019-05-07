@@ -1,32 +1,104 @@
 package exercises;
 
+import javax.swing.JOptionPane;
+
 import voce.SpeechSynthesizer;
 
-/**
- * The first Speak & Spell was introduced at the summer Consumer Electronics
- * Show in June 1978, making it one of the earliest hand-held electronic devices
- * with a visual display to use interchangeable game cartridges. 
- * It was my favorite game as a kid.
- * 
- * https://www.youtube.com/watch?v=qM8FcN0aAvU
- **/
 
 public class SpeakAndSpell {
 
 	public static void main(String[] args) {
-		// 1. Use the speak method to say the word. "e.g. spell mandlebrot"
-
-		// 2. Catch the user's answer in a String
-
-		// 3. If the user spelled the word correctly, speak "correct"
-
-		// 4. Otherwise say "wrong"
-
-		// 5. Repeat the process for other words
 		
-		// 6. Calculate the user's score and give it to them at the end of the game 
+		JOptionPane.showMessageDialog(null, "Hi. If you want to play, press the OK button and wait to hear the word.");
+		int score = 0;
+		String spellingWord = "mandlebrot";
+		speak(spellingWord);
+	
+		String userAnswer = JOptionPane.showInputDialog("Try to spell the word.");
+		
+		if (userAnswer.equals(spellingWord)) {
+			speak("correct");
+			score += 3;
+		} 
+		else {
+			speak("wrong");
+			score -= 1;
+		}
+
+		JOptionPane.showMessageDialog(null, "Hi. Press OK buton for next word!");
+		spellingWord = "curriculum";
+		speak(spellingWord);
+		userAnswer = JOptionPane.showInputDialog("Try to spell the word.");
+		
+		if (userAnswer.equals(spellingWord)) {
+			speak("correct");
+			score += 3;
+		} 
+		else {
+			speak("wrong");
+			score -= 1;
+		}
+		
+		JOptionPane.showMessageDialog(null, "Hi. Press OK buton for next word!");
+		spellingWord = "requirement";
+		speak(spellingWord);
+		userAnswer = JOptionPane.showInputDialog("Try to spell the word.");
+		
+		if (userAnswer.equals(spellingWord)) {
+			speak("correct");
+			score += 3;
+		} 
+		else {
+			speak("wrong");
+			score -= 1;
+		}
+		
+		JOptionPane.showMessageDialog(null, "Hi. Press OK buton for next word!");
+		spellingWord = "equipment";
+		speak(spellingWord);
+		userAnswer = JOptionPane.showInputDialog("Try to spell the word.");
+		
+		if (userAnswer.equals(spellingWord)) {
+			speak("correct");
+			score += 3;
+		} 
+		else {
+			speak("wrong");
+			score -= 1;
+		}
+		
+		JOptionPane.showMessageDialog(null, "Hi. Press OK buton for next word!");
+		spellingWord = "examination";
+		speak(spellingWord);
+		userAnswer = JOptionPane.showInputDialog("Try to spell the word.");
+		
+		if (userAnswer.equals(spellingWord)) {
+			speak("correct");
+			score += 3;
+		} 
+		else {
+			speak("wrong");
+			score -= 1;
+		}
+		
+		JOptionPane.showMessageDialog(null, "Your score is " + score);
 		
 		
+		if (score <= 15) {
+			speak("Awesome. Great job.");
+		} 
+		else if (score <= 12) {
+			speak("Great job. Nice");
+		} 
+		else if(score <= 9) {
+			speak("Good job.");
+		} 
+		else if(score <= 6) {
+			speak("Well you need more practice");
+		} 
+		else {
+			speak("You are beginner. Keep practice");
+		}
 	}
 
 	static void speak(String words) {
