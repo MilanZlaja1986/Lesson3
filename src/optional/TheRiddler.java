@@ -1,20 +1,44 @@
 package optional;
 
+import javax.swing.JOptionPane;
+
 public class TheRiddler {
 
 	public static void main(String[] args) {
-
-		// 1. Make a variable to hold the score
-
-		// 3. Ask the user a riddle. Here are some ideas: bit.ly/some-riddles
-
-		// 4. If they got the answer right, pop up "correct!" and increase the score by one
-
-		// 5. Otherwise, say "wrong" and tell them the answer
-
-		// 6. Add some more riddles
-
-		// 2. Make a pop up to show the score.
+		
+		int score = 0;
+		String userAnswer = JOptionPane.showInputDialog("Brothers and sisters I have none, but this man's father is my father's son. \nWho is the man?");
+		
+		if (userAnswer.equals("my son")) {
+			JOptionPane.showMessageDialog(null, "Correct!");
+			score++;
+		} 
+		else {
+			JOptionPane.showMessageDialog(null, "Wrong. My son is corect answer.");
+		}
+		
+		userAnswer = JOptionPane.showInputDialog("What can travel around the world while staying in a corner?");
+		
+		if (userAnswer.equals("stamp")) {
+			JOptionPane.showMessageDialog(null, "Correct!");
+			score++;
+		} 
+		else {
+			JOptionPane.showMessageDialog(null, "Wrong. Stamp is corect answer.");
+		}
+		
+        userAnswer = JOptionPane.showInputDialog("What has hands but can not clap?");
+		
+		if (userAnswer.equals("clock")) {
+			JOptionPane.showMessageDialog(null, "Correct!");
+			score++;
+		} 
+		else {
+			JOptionPane.showMessageDialog(null, "Wrong. Clock is corect answer.");
+		}
+		
+	
+		JOptionPane.showMessageDialog(null, "Your score is :" + score);
 		
 	}
 }
